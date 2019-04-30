@@ -45,7 +45,7 @@ class Role(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
-    user_id = db.relationship('User', backref='role', lazy="dynamic")
+    user_id = db.relationship('User', backref='users', lazy="dynamic")
 
     def __repr__(self):
 
@@ -63,7 +63,7 @@ class Blog(UserMixin, db.Model):
     date_posted = db.Column(db.DateTime, nullable=False,
                             default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    comments = db.relationship('Comment', backref='blog', lazy="dynamic")
+    comments = db.relationship('Comment', backref='comments', lazy="dynamic")
 
     def save_blog(self):
         db.session.add(self)
