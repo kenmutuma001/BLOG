@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse" role="navigation" style="background-color:rgb(104, 104, 100)">
+<div class="navbar navbar-inverse" role="navigation" style="background-color: beige;padding-bottom: -10px;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -9,7 +9,7 @@
             </button>
 
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse"><br><br>
             <li style="font-size: 30px"><a href="/">Home</a></li>
             </ul>
 
@@ -19,8 +19,7 @@
                         aria-haspopup="true" aria-expanded="false">{{current_user.username| capitalize}} <span
                             class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-                        <li><a href="{{url_for('main.user_pitches',uname=current_user.username)}}">My Pitches</a></li>
+                        <li><a href="{{url_for('main.index',uname=current_user.username)}}">Profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
                     </ul>
