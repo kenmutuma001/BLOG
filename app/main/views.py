@@ -40,7 +40,7 @@ def view_blogs():
     return render_template('view_blogs.html', first=first)
 
 
-@main.route('/comments/<int:id>')
+@main.route('/comment/<int:id>')
 def blog_comments(id):
     blog = get_blog(id)
 
