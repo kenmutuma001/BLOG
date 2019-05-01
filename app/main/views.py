@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, abort
 from . import main
 from flask_login import login_required
-from ..models import User, Blog
+from ..models import User, Blog, Comment
 from .forms import BlogForm, CommentForm
 from .. import db
 from ..request import *
@@ -38,3 +38,9 @@ def view_blogs():
     first = Blog.query.limit(1).all()
 
     return render_template('view_blogs.html', first=first)
+
+
+@main.route('/comments', methods=['GET', 'POST'])
+def view_comments():
+
+    return render_template('comment.html', comments=comments)
