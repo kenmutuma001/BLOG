@@ -40,11 +40,12 @@ def view_blogs():
     return render_template('view_blogs.html', first=first)
 
 
-@main.route('/comment/<int:id>')
-def blog_comments(id):
-    blog = get_blog(id)
-
-    comments = Comment.get_comments(id)
-    title = f'All comments for {blog.title}'
-
-    return render_template('comment.html', title=title, comments=comments)
+@main.route('/comments', methods = ['GET','POST'])
+@login_required
+def new_comment():
+	form = CommentForm()
+	if form.validate_on_submit():
+		comment = Comment (title=form.comment.data)
+		comment.save_comments()
+		return redirect(url_for('main.index'))
+	return render_template('comment.html',form=form)
