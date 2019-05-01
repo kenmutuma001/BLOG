@@ -22,11 +22,14 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
 
                     {% for blog in index %}
                     <div class="card-three" style="background-color:dimgray;border-radius: 5px;">
-                        <h4>BLOGS</h4>
+                        <div style="text-align:center;">
+                            <h4>BLOGS</h4>
+                        </div>
+
                         <hr>
                         <h3>{{blog.body}}</h3>
                         <p>By:{{blog.post}}</p>
