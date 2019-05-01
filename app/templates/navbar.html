@@ -12,7 +12,10 @@
             </ul>
         </li>
         {% else %}
-        <li style="font-size : 20px;"><a href="{{url_for('auth.login')}}">Sign in</a></li>
+        <div style="margin-top: -20px;">
+            <li style="font-size : 20px;"><a href="{{url_for('auth.login')}}">Sign in</a></li>
+        </div>
+
     </ul>
     {%endif%}
 
