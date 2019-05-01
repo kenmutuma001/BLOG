@@ -40,12 +40,32 @@ def view_blogs():
     return render_template('view_blogs.html', first=first)
 
 
-@main.route('/comments', methods = ['GET','POST'])
+@main.route('/comments', methods=['GET', 'POST'])
 @login_required
 def new_comment():
-	form = CommentForm()
-	if form.validate_on_submit():
-		comment = Comment (title=form.comment.data)
-		comment.save_comments()
-		return redirect(url_for('main.index'))
-	return render_template('comment.html',form=form)
+    form = CommentForm()
+    if form.validate_on_submit():
+        comment = Comment(title=form.comment.data)
+        comment.save_comments()
+        return redirect(url_for('main.index'))
+    return render_template('comment.html', form=form)
+
+
+@main.route('/user.<uname>/comments', methods=['GET', 'POST'])
+@login_required
+def update_comments(uname):
+    user = User.query.filter_by(username=uname).first
+    if user is none:
+        abort(404)
+
+    form = comments()
+
+    if form.validate_on_submit():
+        user.bio = form.bio.data
+
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('.profile', uname=user.username))
+
+    return render_template('profile/comments.html', form=form)
