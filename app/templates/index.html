@@ -21,11 +21,11 @@
 
             </div>
 
-            <div class="row" style="background-color:dimgray;border-radius: 5px;">
+            <div class="row">
                 <div class="col-md-3">
 
                     {% for blog in index %}
-                    <div class="card-three">
+                    <div class="card-three" style="background-color:dimgray;border-radius: 5px;">
                         <h3>{{blog.body}}</h3>
                         <p>By:{{blog.post}}</p>
                         <p>Posted at {{blog.date_posted}}</p>
