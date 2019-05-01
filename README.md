@@ -27,7 +27,7 @@ This website allows user to sign up an account and can add short blogs.One can a
 | User can update profile | Choose the profile picture path | Profile picture |
 | User add blog  | blog title and description  | blog posted   |
 ## LINK
-
+https://ken-blog.herokuapp.com/
 ## BUGS
 Their are no known bugs if any is found please make contact
 ## CONTACT
