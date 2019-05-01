@@ -1,5 +1,5 @@
 <div class="mynavbar" style="background-color: rgba(105, 105, 105, 0.562);padding-bottom: 10px;">
-    <p style="font-size: 15px;"><a href="/">Home</a></p>
+    <p style="font-size: 15px;margin-left: 20px;margin-top: 4px;"><a href="/">Home</a></p>
     <ul class="nav navbar-nav navbar-right">
         {% if current_user.is_authenticated %}
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -12,7 +12,7 @@
             </ul>
         </li>
         {% else %}
-        <div style="margin-top: -20px;">
+        <div style="margin-top: -20px;margin-right: -20px;">
             <li style="font-size : 20px;"><a href="{{url_for('auth.login')}}">Sign in</a></li>
         </div>
 
