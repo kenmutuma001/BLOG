@@ -8,7 +8,24 @@
 {% endblock%}
 {% block content %}
 <img src="/static/img/photo.jpeg" alt="image" height="350px" width="1300px">
-<div class="container-fluid" style="background-color: dimgray;">
+
+<div style="background-color:dimgray;border-radius: 5px;font-weight: 400;">
+    <hr>
+    <h3>Quote</h3>
+    <hr>
+
+    <hr>
+    <div class="cards-two">
+        <h4>Quote by {{quote[0]}}</h4>
+        <p>~<em>{{quote[1]}}</em></p>
+    </div>
+    <br>
+
+
+
+
+</div>
+<div class="container-fluid" style="background-color:beige;">
     <div class="row" id="one">
         <div class="col-md-8">
 
@@ -47,22 +64,7 @@
 
         </div>
 
-        <div class="col-md-2" style="background-color:dimgray;border-radius: 5px;font-weight: 400;margin-top: 100px;">
-            <hr>
-            <h3>Quote</h3>
-            <hr>
 
-            <hr>
-            <div class="cards-two">
-                <h4>Quote by {{quote[0]}}</h4>
-                <p>~<em>{{quote[1]}}</em></p>
-            </div>
-            <br>
-
-
-
-
-        </div>
     </div>
 </div> -->
 {% endblock%}
