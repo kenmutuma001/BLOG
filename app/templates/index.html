@@ -9,23 +9,16 @@
 {% block content %}
 <img src="/static/img/photo.jpeg" alt="image" height="350px" width="1300px">
 
-<div style="background-color:dimgray;border-radius: 5px;font-weight: 800;">
-
-    <hr>
-    <div style="text-align:center;background-color: ghostwhite;">
-        <h3>Quote</h3>
-    </div>
-    <hr>
-    <div class="cards-two">
-        <h4>Quote by {{quote[0]}}</h4>
-        <p>~<em>{{quote[1]}}</em></p>
-    </div>
-    <br>
-
-
-
-
+<hr>
+<div style="text-align:center;background-color: ghostwhite;">
+    <h3>Quote Of The Day</h3>
 </div>
+<hr>
+<div class="cards-two" style="background-color:dimgray;border-radius: 5px;font-weight: 800;">
+    <h4>Quote by {{quote[0]}}</h4>
+    <p>~<em>{{quote[1]}}</em></p>
+</div>
+<br>
 <div class="container-fluid" style="background-color:beige;">
     <div class="row" id="one">
         <div class="col-md-8">
