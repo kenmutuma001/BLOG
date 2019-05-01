@@ -40,7 +40,11 @@ def view_blogs():
     return render_template('view_blogs.html', first=first)
 
 
-@main.route('/comments', methods=['GET', 'POST'])
-def view_comments():
+@main.route('/comments/<int:id>')
+def blog_comments(id):
+    blog = get_blog(id)
 
-    return render_template('comment.html', comments=comments)
+    comments = Comment.get_comments(id)
+    title = f'All comments for {blog.title}'
+
+    return render_template('comment.html', title=title, comments=comments)
