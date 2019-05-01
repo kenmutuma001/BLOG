@@ -15,20 +15,23 @@
                 <a class="btn btn-success btn-lg text-center" href="/new_blog"> NEW BLOG
                 </a>
                 <hr>
-                <h4>BLOGS</h4>
+
 
 
 
             </div>
 
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
 
                     {% for blog in index %}
                     <div class="card-three" style="background-color:dimgray;border-radius: 5px;">
+                        <h4>BLOGS</h4>
+                        <hr>
                         <h3>{{blog.body}}</h3>
                         <p>By:{{blog.post}}</p>
                         <p>Posted at {{blog.date_posted}}</p>
+                        <hr>
                         <p><a href="/comment">leave comment</a></p>
                     </div>
                     {% endfor %}
